@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Predict the Weather</title>
+  <style>
+    table,
+    th,
+    td {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>7 Day Forecast</h1>
+  <table>
+    <tr>
+      <th>Sunday</th>
+      <th>Monday</th>
+      <th>Wednesday</th>
+      <th>Thursday</th>
+      <th>Friday</th>
+      <th>Saturday</th>
+      <th>Sunday</th>
+    </tr>
+    <tr>
+      <td id="sun">sun</td>
+      <td id="mon">mon</td>
+      <td id="tues">tues</td>
+      <td id="wed">wed</td>
+      <td id="thurs">thurs</td>
+      <td id="fri">fri</td>
+      <td id="sat">sat</td>
+    </tr>
+
+  </table>
+  <script>
+    sunTableData = document.getElementById("sun");
+    monTableData = document.getElementById("mon");
+    tuesTableData = document.getElementById("tues");
+    wedTableData = document.getElementById("wed");
+    thursTableData = document.getElementById("thurs");
+    friTableData = document.getElementById("fri");
+    satTableData = document.getElementById("sat");
+
+
+    const weather = ["sunny", "cloudy", "rainy", "overcast"]
+    const week = [sunTableData, monTableData, tuesTableData, wedTableData, thursTableData, friTableData, satTableData]
+
+
+    for (const day of week) {
+      const randomWeatherIndex = (Math.floor(Math.random() * weather.length))
+      day.innerHTML = weather[randomWeatherIndex]
+    }
+
+  </script>
+</body>
+
+</html>
