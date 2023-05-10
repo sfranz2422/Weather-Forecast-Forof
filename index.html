@@ -13,6 +13,7 @@
     }
   </style>
 </head>
+
 <body>
   <h1>7 Day Forecast</h1>
   <table>
@@ -26,30 +27,21 @@
       <th>Sunday</th>
     </tr>
     <tr>
-      <td id="sun">sun</td>
-      <td id="mon">mon</td>
-      <td id="tues">tues</td>
-      <td id="wed">wed</td>
-      <td id="thurs">thurs</td>
-      <td id="fri">fri</td>
-      <td id="sat">sat</td>
+      <td>sun</td>
+      <td>mon</td>
+      <td>tues</td>
+      <td>wed</td>
+      <td>thurs</td>
+      <td>fri</td>
+      <td>sat</td>
     </tr>
 
   </table>
   <script>
-    sunTableData = document.getElementById("sun");
-    monTableData = document.getElementById("mon");
-    tuesTableData = document.getElementById("tues");
-    wedTableData = document.getElementById("wed");
-    thursTableData = document.getElementById("thurs");
-    friTableData = document.getElementById("fri");
-    satTableData = document.getElementById("sat");
-
-
     const weather = ["sunny", "cloudy", "rainy", "overcast"]
-    const week = [sunTableData, monTableData, tuesTableData, wedTableData, thursTableData, friTableData, satTableData]
 
 
+const week = document.querySelectorAll("td")
     for (const day of week) {
       const randomWeatherIndex = (Math.floor(Math.random() * weather.length))
       day.innerHTML = weather[randomWeatherIndex]
